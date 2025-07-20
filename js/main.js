@@ -38,34 +38,6 @@ $(document).ready(function () {
 
   
 
-  let startY = 0;
-  let pulling = false;
-  let pulledEnough = false;
-
-  document.addEventListener('touchstart', (e) => {
-    if (document.scrollingElement.scrollTop === 0) {
-      startY = e.touches[0].clientY;
-      pulling = true;
-    }
-  });
-
-  document.addEventListener('touchmove', (e) => {
-    if (!pulling) return;
-    const deltaY = e.touches[0].clientY - startY;
-    if (deltaY > 60) {
-      document.getElementById('pull-to-refresh').style.top = '0px';
-      pulledEnough = true;
-    }
-  });
-
-  document.addEventListener('touchend', () => {
-    if (pulledEnough) {
-      location.reload(); // Принудительное обновление
-    } else {
-      document.getElementById('pull-to-refresh').style.top = '-50px';
-    }
-    pulling = false;
-    pulledEnough = false;
-  });
+  
 
 });
