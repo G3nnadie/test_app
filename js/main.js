@@ -34,36 +34,38 @@ $(document).ready(function () {
     }
   });
 
+
+
+  
+
   let startY = 0;
-  let isPulling = false;
+  let pulling = false;
+  let pulledEnough = false;
 
   document.addEventListener('touchstart', (e) => {
     if (document.scrollingElement.scrollTop === 0) {
       startY = e.touches[0].clientY;
-      isPulling = true;
+      pulling = true;
     }
   });
 
   document.addEventListener('touchmove', (e) => {
-    if (!isPulling) return;
-
+    if (!pulling) return;
     const deltaY = e.touches[0].clientY - startY;
     if (deltaY > 60) {
-      document.body.classList.add('pull-refreshing');
+      document.getElementById('pull-to-refresh').style.top = '0px';
+      pulledEnough = true;
     }
   });
 
   document.addEventListener('touchend', () => {
-    if (document.body.classList.contains('pull-refreshing')) {
-      // Обновляем страницу
-      location.reload();
+    if (pulledEnough) {
+      location.reload(); // Принудительное обновление
+    } else {
+      document.getElementById('pull-to-refresh').style.top = '-50px';
     }
-    isPulling = false;
-    document.body.classList.remove('pull-refreshing');
+    pulling = false;
+    pulledEnough = false;
   });
-
-  document.addEventListener('touchstart', () => {
-  alert('touchstart работает!');
-});
 
 });
