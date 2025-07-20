@@ -1066,15 +1066,14 @@ body {
 
 
 #pull-to-refresh {
-  position: absolute;
-  top: -50px;
-  left: 0;
-  right: 0;
+  z-index: 3;
+  color: #fff;
   height: 50px;
-  text-align: center;
   line-height: 50px;
-  background-color: #f0f0f0;
-  transition: top 0.3s;
+  position: absolute;
+  background: #1c1c1e;
+  top: -50px;left: 0;right: 0;
+  transition: top 0.2s;
 }
 
 body.pull-refreshing #pull-to-refresh {
