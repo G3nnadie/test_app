@@ -77,11 +77,11 @@ $(document).ready(function () {
   });
 
   // Close
-  const input-name = document.querySelector('.input-name');
+  const inputName = document.querySelector('.input-name');
 
-  input-name.addEventListener('keydown', function (e) {
+  inputName.addEventListener('keydown', function (e) {
     if (e.key === 'Enter') {
-      input-name.blur(); // Снимаем фокус → клавиатура скрывается
+      inputName.blur(); // Снимаем фокус → клавиатура скрывается
     }
   });
 
