@@ -10,28 +10,65 @@ $(document).ready(function () {
   $('.modal__close, .modal__line').on('click', function(e) {
     e.preventDefault();
     $('.modal').slideUp(200);
+    modalIsOpen = false;
   })
 
   $('.open-modal--info').on('click', function(e) {
     e.preventDefault();
-    $('.modal--info').slideToggle(200);
+    $('.modal--info').slideDown(200);
+    modalIsOpen = true;
   });
 
   $('.open-modal--recipient').on('click', function(e) {
     e.preventDefault();
-    $('.modal--recipient').slideToggle(200);
+    $('.modal--recipient').slideDown(200);
+    modalIsOpen = true;
   });
 
   $('.open-modal--name').on('click', function(e) {
     e.preventDefault();
-    $('.modal--name').slideToggle(200);
+    $('.modal--name').slideDown(200);
+    modalIsOpen = true;
   });
 
   $('body').mouseup(function (e) {
     let modalContent = $(".modal__box");
     if (!modalContent.is(e.target) && modalContent.has(e.target).length === 0) {
-      $('.modal').fadeOut(200);
+      $('.modal').slideUp(200);
+      modalIsOpen = false;
     }
+  });
+
+  const modals = document.querySelectorAll('.modal');
+
+  modals.forEach(modal => {
+    const modalBox = modal.querySelector('.modal__box');
+    let startY = 0;
+    let endY = 0;
+
+    modalBox.addEventListener('touchstart', (e) => {
+      startY = e.touches[0].clientY;
+    });
+
+    modalBox.addEventListener('touchmove', (e) => {
+      endY = e.touches[0].clientY;
+    });
+
+    modalBox.addEventListener('touchend', () => {
+      const diff = endY - startY;
+      const minSwipeDistance = 80;
+
+      if (diff > minSwipeDistance) {
+        $('.modal').slideUp(200);
+        modalIsOpen = false;
+      }
+    });
+  });
+
+  // Input only number
+  const input = document.querySelector('.input-num');
+  input.addEventListener('input', () => {
+    input.value = input.value.replace(/\D/g, '');
   });
 
   // Nav
@@ -56,13 +93,15 @@ $(document).ready(function () {
     });
   });
 
-
+  // Update page
+  let modalIsOpen = false; // флаг, который надо устанавливать при открытии/закрытии модалки
 
   let startY = 0;
   let pulling = false;
   let pulledEnough = false;
 
   document.addEventListener('touchstart', (e) => {
+    if (modalIsOpen) return; // Если модалка открыта — не начинаем свайп вниз
     if (document.scrollingElement.scrollTop === 0) {
       startY = e.touches[0].clientY;
       pulling = true;
@@ -70,6 +109,7 @@ $(document).ready(function () {
   });
 
   document.addEventListener('touchmove', (e) => {
+    if (modalIsOpen) return; // Если модалка открыта — игнорируем свайпы вниз
     if (!pulling) return;
     const deltaY = e.touches[0].clientY - startY;
     if (deltaY > 60) {
@@ -79,8 +119,9 @@ $(document).ready(function () {
   });
 
   document.addEventListener('touchend', () => {
+    if (modalIsOpen) return; // Если модалка открыта — не обновляем страницу
     if (pulledEnough) {
-      location.reload(); // Принудительное обновление
+      location.reload(); // Обновление страницы
     } else {
       document.getElementById('pull-to-refresh').style.top = '-50px';
     }

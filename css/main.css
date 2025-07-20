@@ -48,6 +48,10 @@ button {border: 0;padding: 0;cursor: pointer;background: none;}
 * {outline: none;}
 /* Style Default End */
 
+html, body {
+  overscroll-behavior: contain;
+}
+
 body {
   color: #fff;
   font-size: 16px;
@@ -536,6 +540,12 @@ body {
   width: 17px;height: 17px;
   -ms-flex-negative: 0;
       flex-shrink: 0;
+}
+
+.stars .info-list span i {
+  top: -1px;
+  margin: 0 5px 0 0;
+  position: relative;
 }
 
 .stars__form .btn {
