@@ -7,7 +7,7 @@ $(document).ready(function () {
   });
 
   // Modal
-  $('.modal__close').on('click', function(e) {
+  $('.modal__close, .modal__line').on('click', function(e) {
     e.preventDefault();
     $('.modal').slideUp(200);
   })
@@ -25,6 +25,13 @@ $(document).ready(function () {
   $('.open-modal--name').on('click', function(e) {
     e.preventDefault();
     $('.modal--name').slideToggle(200);
+  });
+
+  $('body').mouseup(function (e) {
+    let modalContent = $(".modal__box");
+    if (!modalContent.is(e.target) && modalContent.has(e.target).length === 0) {
+      $('.modal').fadeOut(200);
+    }
   });
 
 });
