@@ -22,10 +22,10 @@
 /* Flex Class End */
 
 /* Reserved Class */
+.no-scroll {overflow: hidden;}
 .text-left {text-align: left;}
 .text-center {text-align: center;}
 .text-right {text-align: right;}
-.no-scroll {position: fixed;top: 0;left: 0;right: 0;}
 .symbol-rub {font-family: -apple-system,system-ui,Arial,Helvetica,sans-serif;}
 .text-crop {white-space: nowrap;overflow: hidden;-o-text-overflow: ellipsis;text-overflow: ellipsis;}
 /* Reserved Class End*/
