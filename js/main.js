@@ -34,4 +34,32 @@ $(document).ready(function () {
     }
   });
 
+  let startY = 0;
+let isPulling = false;
+
+document.addEventListener('touchstart', (e) => {
+  if (document.scrollingElement.scrollTop === 0) {
+    startY = e.touches[0].clientY;
+    isPulling = true;
+  }
+});
+
+document.addEventListener('touchmove', (e) => {
+  if (!isPulling) return;
+
+  const deltaY = e.touches[0].clientY - startY;
+  if (deltaY > 60) {
+    document.body.classList.add('pull-refreshing');
+  }
+});
+
+document.addEventListener('touchend', () => {
+  if (document.body.classList.contains('pull-refreshing')) {
+    // Обновляем страницу
+    location.reload();
+  }
+  isPulling = false;
+  document.body.classList.remove('pull-refreshing');
+});
+
 });
