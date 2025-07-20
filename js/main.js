@@ -76,6 +76,15 @@ $(document).ready(function () {
     input.value = input.value.replace(/\D/g, '');
   });
 
+  // Close
+  const input = document.querySelector('.input-name');
+
+  input.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') {
+      input.blur(); // Снимаем фокус → клавиатура скрывается
+    }
+  });
+
   // Nav
   let isInputFocused = false;
 
