@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>Default</title>
+  <meta name="description" content="">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"> -->
+
+  <!-- Fonts -->
+  <link rel="stylesheet" href="fonts/stylesheet.css">
+  <!-- Fonts END -->
+
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/grid.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <div class="wrapper fx">
+    <div class="container fx-column">
+    
+      <!-- Header -->
+
+      <header class="header">
+        <div class="header__up fx fx-between align-center">
+          <div class="title">
+            <h1 class="title__h1 fx align-center">Купить звезды Telegram<i class="i-star-orange"></i></h1>
+          </div>
+          <div class="lang fx align-center">
+            <span class="lang__current">RU</span>
+            <ul class="lang__list">
+              <li><a href="#">EN</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="header__body fx fx-between">
+          <div class="header__box header__box--1">
+            <span>Получай подарки покупая <span>Звезды</span></span>
+            <p>Каждый месяц разыгрываем подарки среди купивших звёзды через наш сервис.</p>
+          </div>
+          <div class="header__box header__box--2 text-center">
+            <span>Вы <span>экономите</span> при покупке звезд</span>
+            <strong>через нас 24%</strong>
+            <p><a href="#" class="open-modal--info">Подробнее</a></p>
+          </div>
+        </div>
+      </header>
+      
+      <!-- Main -->
+
+      <main class="main">
+        <div class="stars">
+          <form action="#" class="form stars__form">
+            <div class="form__item">
+              <h2 class="title__h2">Необходимое количество <span>Звезд</span></h2>
+              <label class="form__field form__field--star">
+                <input type="number" value="1000">
+                <span class="form__info">Минимальное количество: 50 звезд</span>
+                <span class="form__inputError">Поле обязательно для заполнения</span>
+              </label>
+            </div>
+            <div class="form__item">
+              <h2 class="title__h2 fx">Выберите получателя<i class="btn-questions flex-center open-modal--recipient">?</i></h2>
+              <div class="check check--bg fx">
+                <label class="check__item">
+                  <input type="radio" name="recipient" checked>
+                  <span class="check__mark"></span>
+                  <span class="check__bg"></span>
+                  Купить для себя
+                </label>
+                <label class="check__item">
+                  <input type="radio" name="recipient">
+                  <span class="check__mark"></span>
+                  <span class="check__bg"></span>
+                  Купить для друга
+                </label>
+              </div>
+            </div>
+            <div class="form__item form__item--3">
+              <h2 class="title__h2 fx">Укажите имя пользователя получателя<i class="btn-questions flex-center open-modal--name">?</i></h2>
+              <label class="form__field">
+                <input type="text">
+                <span class="form__info">Получатель: <a href="#">Nikita Nosolenko</a></span>
+                <span class="form__inputError">Поле обязательно для заполнения</span>
+              </label>
+            </div>
+            <div class="form__item">
+              <h2 class="title__h2">Выберите метод оплаты</h2>
+              <div class="check">
+                <label class="check__item">
+                  <input type="radio" name="pay" checked>
+                  <span class="check__mark"></span>
+                  СБП
+                  <i class="i-spb"></i>
+                </label>
+                <label class="check__item">
+                  <input type="radio" name="pay">
+                  <span class="check__mark"></span>
+                  TON Wallet
+                  <i class="i-ton"></i>
+                </label>
+                <label class="check__item">
+                  <input type="radio" name="pay">
+                  <span class="check__mark"></span>
+                  Crypto и USDTs
+                  <i class="i-usdt"></i>
+                </label>
+              </div>
+            </div>
+            <ul class="info-list">
+              <li>
+                <span>К получению</span>
+                <span>1000</span>
+              </li>
+              <li>
+                <span>Получатель</span>
+                <span>(Nosolenko) - <a href="#">Nikita Nosolenko</a></span>
+              </li>
+              <li>
+                <span>К оплате</span>
+                <span>14560 RUB<span>+ 6% (комиссия платёжной системы)</span></span>
+              </li>
+            </ul>
+            <button class="btn btn--primary flex-center btn--disable">Продолжить</button>
+          </form>
+        </div>
+      </main>
+
+      <!-- Nav -->
+
+      <nav class="nav">
+        <div class="container">
+          <ul class="nav__list fx fx-between align-center">
+            <li class="nav__item"><a href="index.html" class="nav__link nav__link--active"><i style="background: url('img/icons/i-star.png') center/contain no-repeat;"></i>Звезды</a></li>
+            <li class="nav__item"><a href="signal.html" class="nav__link"><i style="background: url('img/icons/i-signals.png') center/contain no-repeat;"></i>Сигнал</a></li>
+            <li class="nav__item"><a href="orders.html" class="nav__link"><i style="background: url('img/icons/i-orders.png') center/contain no-repeat;"></i>Мои заказы</a></li>
+            <li class="nav__item"><a href="guarantees.html" class="nav__link"><i style="background: url('img/icons/i-guarantees.png') center/contain no-repeat;"></i>Гарантии</a></li>
+            <li class="nav__item"><a href="contacts.html" class="nav__link"><i style="background: url('img/icons/i-contacts.png') center/contain no-repeat;"></i>Контакты</a></li>
+          </ul>
+        </div>
+      </nav>
+
+    </div>
+  </div>
+
+  <!-- Modal -->
+
+  <div class="modal modal--info">
+    <div class="modal__box text-center">
+      <span class="modal__line"></span>
+      <div class="modal__close"></div>
+      <img src="img/other/modal-1.png" alt="Img">
+      <h2>Вы экономите при покупке звезд через нас <span class="orange">20%</span></h2>
+      <p>Вы можете приобрести Telegram-звезды напрямую в приложении через Apple Pay или Google Play. Однако в этом случае действует официальный курс: 1 звезда = 1.77 ₽ (≈ $0.022).</p>
+      <p>Через наш сервис вы покупаете звезды по сниженной цене - всего 1.45 ₽ за звезду (≈ $0.018).</p>
+      <p>Например, при покупке 10 000 звёзд через нас вы экономите 3 200 ₽ (≈ $40).</p>
+      <p>Telegram обязан выплачивать комиссию Apple и Google за внутриигровые покупки. Мы же приобретаем звезды напрямую через официальный Telegram API и Fragment, обходя дополнительные сборы.</p>
+      <p>Вы получаете те же звезды — легально и дешевле.</p>
+    </div>
+  </div>
+
+  <!-- Modal -->
+
+  <div class="modal modal--recipient">
+    <div class="modal__box text-center">
+      <span class="modal__line"></span>
+      <div class="modal__close"></div>
+      <img src="img/other/modal-2.png" alt="Img">
+      <h2>Выберите кто получит <span class="orange">звезды</span></h2>
+      <p>Вы можете приобрести звёзды для себя — просто выберите опцию <span class="blue">«Купить для себя»</span>, и после оплаты звёзды поступят на ваш Telegram-аккаунт, с которого вы сейчас работаете в приложении.</p>
+      <p>Если хотите отправить звёзды другу или коллеге, выберите <span class="blue">«Купить для друга»</span>, укажите его <span class="orange">Имя пользователя</span>, и после оплаты система автоматически зачислит звёзды на его аккаунт.</p>
+    </div>
+  </div>
+
+  <!-- Modal -->
+
+  <div class="modal modal--name">
+    <div class="modal__box text-center">
+      <span class="modal__line"></span>
+      <div class="modal__close"></div>
+      <img src="img/other/modal-3.png" alt="Img">
+      <h2>Укажите <span class="blue">имя пользователя</span> получателя <span class="orange">звезд</span></h2>
+      <p>Откройте профиль вашего друга, скопируйте его имя пользователя и вставьте в соответствующее поле при создании заказа.</p>
+      <p>После этого ниже отобразится публичное имя пользователя. Если оно совпадает с именем получателя — значит, вы всё указали верно, и звёзды гарантированно будут доставлены нужному адресату.</p>
+    </div>
+  </div>
+
+  <script src="libs/jquery/jquery-3.4.0.min.js"></script>
+  <script src="js/main.js"></script>
+
+  <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+  <!-- Yandex.Metrika counter --><!-- /Yandex.Metrika counter -->
+  <!-- Google Analytics counter --><!-- /Google Analytics counter -->
+</body>
+</html>
