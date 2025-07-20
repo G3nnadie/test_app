@@ -34,9 +34,31 @@ $(document).ready(function () {
     }
   });
 
+  // Nav
+  document.addEventListener('DOMContentLoaded', () => {
+    const nav = document.querySelector('.nav');
+
+    function updateMenuVisibility() {
+      const isKeyboardOpen = window.visualViewport.height < window.innerHeight;
+      nav.style.display = isKeyboardOpen ? 'none' : 'block';
+    }
+
+    // Обновляем при изменении визуального вьюпорта (работает при появлении клавиатуры)
+    if (window.visualViewport) {
+      window.visualViewport.addEventListener('resize', updateMenuVisibility);
+    }
+
+    // На всякий случай — слушаем фокус и блюр
+    document.querySelectorAll('input, textarea').forEach((input) => {
+      input.addEventListener('focus', updateMenuVisibility);
+      input.addEventListener('blur', () => {
+        // Ждём чуть-чуть, вдруг переходит на другое поле
+        setTimeout(updateMenuVisibility, 50);
+      });
+    });
+  });
 
 
-  
 
   let startY = 0;
   let pulling = false;
