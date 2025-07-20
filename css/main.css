@@ -506,7 +506,7 @@ body {
 }
 
 .info-list li > span:first-child {
-  width: 150px;
+  width: 120px;
   padding-right: 10px;
   -ms-flex-negative: 0;
       flex-shrink: 0;
@@ -536,6 +536,12 @@ body {
 
 .order-created .title__h2 span {
   color: #f5c857;
+}
+
+.order-created .info-list li > span:first-child,
+.order-successful .info-list li > span:first-child,
+.order-cancelled .info-list li > span:first-child {
+  width: 140px;
 }
 
 .title + .info-list {
@@ -963,26 +969,6 @@ body {
   .stars__form .form__item--3 .title__h2 {
     font-size: 12px;
   }
-  .info-list li {
-    display: block;
-  }
-  .info-list li > span {
-    width: 100% !important;
-  }
-  .info-list li > span:last-child,
-  .info-list li span span {
-    text-align: left;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-  }
-  .info-list li span span {
-    width: 100%;
-    text-align: left;
-  }
-  .info-list li > span:last-child {
-    margin-top: 5px;
-  }
   .orders__item {
     padding-right: 0;
   }
@@ -1008,6 +994,26 @@ body {
   }
   .header__box--1 {
     padding-right: 105px;
+  }
+  .info-list li {
+    display: block;
+  }
+  .info-list li > span {
+    width: 100% !important;
+  }
+  .info-list li > span:last-child,
+  .info-list li span span {
+    text-align: left;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .info-list li span span {
+    width: 100%;
+    text-align: left;
+  }
+  .info-list li > span:last-child {
+    margin-top: 5px;
   }
 }
 
