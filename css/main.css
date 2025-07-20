@@ -397,14 +397,14 @@ body {
 }
 
 .header__box--1 {
-  padding-right: 92px;
+  padding-right: 75px;
   width: calc(60% - 5px);
   background: url(../img/bg/present-bg.png) center/cover no-repeat;
 }
 
 .header__box--1:after {
-  top: 50%;right: 10px;
-  width: 76px;height: 69px;
+  top: 50%;right: 5px;
+  width: 70px;height: 64px;
   background: url(../img/icons/i-present.png) center/contain no-repeat;
   -webkit-transform: translateY(-50%);
       -ms-transform: translateY(-50%);
