@@ -35,26 +35,24 @@ $(document).ready(function () {
   });
 
   // Nav
-  document.addEventListener('DOMContentLoaded', () => {
-    const nav = document.querySelector('.nav');
+  let isInputFocused = false;
 
-    function updateMenuVisibility() {
-      const isKeyboardOpen = window.visualViewport.height < window.innerHeight;
-      nav.style.display = isKeyboardOpen ? 'none' : 'block';
-    }
+  const nav = document.querySelector('.nav');
 
-    // Обновляем при изменении визуального вьюпорта (работает при появлении клавиатуры)
-    if (window.visualViewport) {
-      window.visualViewport.addEventListener('resize', updateMenuVisibility);
-    }
+  document.querySelectorAll('input, textarea').forEach((input) => {
+    input.addEventListener('focus', () => {
+      isInputFocused = true;
+      nav.style.display = 'none';
+    });
 
-    // На всякий случай — слушаем фокус и блюр
-    document.querySelectorAll('input, textarea').forEach((input) => {
-      input.addEventListener('focus', updateMenuVisibility);
-      input.addEventListener('blur', () => {
-        // Ждём чуть-чуть, вдруг переходит на другое поле
-        setTimeout(updateMenuVisibility, 50);
-      });
+    input.addEventListener('blur', () => {
+      // Ждём и проверяем, остался ли кто-то с фокусом
+      setTimeout(() => {
+        if (!document.querySelector('input:focus, textarea:focus')) {
+          isInputFocused = false;
+          nav.style.display = 'block';
+        }
+      }, 50);
     });
   });
 
