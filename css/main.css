@@ -397,7 +397,7 @@ body {
 }
 
 .header__box--1 {
-  padding-right: 75px;
+  padding-right: 80px;
   width: calc(60% - 5px);
   background: url(../img/bg/present-bg.png) center/cover no-repeat;
 }
